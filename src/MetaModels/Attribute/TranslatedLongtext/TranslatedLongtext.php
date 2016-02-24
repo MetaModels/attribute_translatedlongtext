@@ -37,12 +37,12 @@ class TranslatedLongtext extends TranslatedReference
     {
         return array_merge(parent::getAttributeSettingNames(), array(
             'allowHtml',
-            'rte',
-            'preserveTags',
+            'cols',
             'decodeEntities',
+            'mandatory',
+            'preserveTags',
             'rte',
             'rows',
-            'cols',
         ));
     }
 
