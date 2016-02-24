@@ -7,14 +7,14 @@
  *
  * PHP version 5
  *
- * @package     MetaModels
- * @subpackage  AttributeTranslatedLongtext
- * @author      Christian Schiffler <c.schiffler@cyberspectrum.de>
- * @author      Andreas Isaak <info@andreas-isaak.de>
- * @author      Christopher Boelter <christopher@boelter.eu>
- * @author      David Maack <maack@men-at-work.de>
- * @copyright   The MetaModels team.
- * @license     LGPL.
+ * @package    MetaModels
+ * @subpackage AttributeTranslatedLongtext
+ * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
+ * @author     Andreas Isaak <info@andreas-isaak.de>
+ * @author     Christopher Boelter <christopher@boelter.eu>
+ * @author     David Maack <maack@men-at-work.de>
+ * @copyright  2012-2016 The MetaModels team.
+ * @license    https://github.com/MetaModels/attribute_translatedlongtext/blob/master/LICENSE LGPL-3.0
  * @filesource
  */
 
@@ -25,8 +25,8 @@ use MetaModels\Attribute\TranslatedReference;
 /**
  * This is the MetaModelAttribute class for handling translated long text fields.
  *
- * @package     MetaModels
- * @subpackage  AttributeTranslatedLongtext
+ * @package    MetaModels
+ * @subpackage AttributeTranslatedLongtext
  */
 class TranslatedLongtext extends TranslatedReference
 {
