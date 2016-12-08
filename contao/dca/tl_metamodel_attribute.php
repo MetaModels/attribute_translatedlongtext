@@ -1,11 +1,17 @@
 <?php
+
 /**
+ * This file is part of MetaModels/attribute_translatedlongtext.
+ *
+ * (c) 2012-2016 The MetaModels team.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
  * The MetaModels extension allows the creation of multiple collections of custom items,
  * each with its own unique set of selectable attributes, with attribute extendability.
  * The Front-End modules allow you to build powerful listing and filtering of the
  * data in each collection.
- *
- * PHP version 5
  *
  * @package     MetaModels
  * @subpackage  AttributeTranslatedLongtext
@@ -14,8 +20,8 @@
  * @author      Christopher Boelter <christopher@boelter.eu>
  * @author      David Maack <maack@men-at-work.de>
  * @author      Sven Baumann <baumann.sv@gmail.com>
- * @copyright   The MetaModels team.
- * @license     LGPL.
+ * @copyright   2012-2016 The MetaModels team.
+ * @license     https://github.com/MetaModels/attribute_translatedlongtext/blob/master/LICENSE LGPL-3.0
  * @filesource
  */
 
