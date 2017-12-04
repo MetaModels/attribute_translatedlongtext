@@ -16,17 +16,19 @@
  * @filesource
  */
 
-namespace MetaModels\Test\Attribute\TranslatedLongtext;
+namespace MetaModels\AttributeTranslatedLongtextBundle\Test\Attribute;
 
+use Doctrine\DBAL\Connection;
 use MetaModels\Attribute\IAttributeTypeFactory;
-use MetaModels\Attribute\TranslatedLongtext\AttributeTypeFactory;
+use MetaModels\AttributeTranslatedLongtextBundle\Attribute\AttributeTypeFactory;
+use MetaModels\AttributeTranslatedLongtextBundle\Attribute\TranslatedLongtext;
 use MetaModels\IMetaModel;
-use MetaModels\Test\Attribute\AttributeTypeFactoryTest;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test the attribute factory.
  */
-class TranslatedLongTextAttributeTypeFactoryTest extends AttributeTypeFactoryTest
+class TranslatedLongTextAttributeTypeFactoryTest extends TestCase
 {
     /**
      * Mock a MetaModel.
@@ -41,11 +43,7 @@ class TranslatedLongTextAttributeTypeFactoryTest extends AttributeTypeFactoryTes
      */
     protected function mockMetaModel($tableName, $language, $fallbackLanguage)
     {
-        $metaModel = $this->getMock(
-            'MetaModels\MetaModel',
-            array(),
-            array(array())
-        );
+        $metaModel = $this->getMockForAbstractClass(IMetaModel::class);
 
         $metaModel
             ->expects($this->any())
@@ -66,13 +64,25 @@ class TranslatedLongTextAttributeTypeFactoryTest extends AttributeTypeFactoryTes
     }
 
     /**
+     * Mock the database connection.
+     *
+     * @return \PHPUnit_Framework_MockObject_MockObject|Connection
+     */
+    private function mockConnection()
+    {
+        return $this->getMockBuilder(Connection::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    /**
      * Override the method to run the tests on the attribute factories to be tested.
      *
      * @return IAttributeTypeFactory[]
      */
     protected function getAttributeFactories()
     {
-        return array(new AttributeTypeFactory());
+        return array(new AttributeTypeFactory($this->mockConnection()));
     }
 
     /**
@@ -82,12 +92,12 @@ class TranslatedLongTextAttributeTypeFactoryTest extends AttributeTypeFactoryTes
      */
     public function testCreateSelect()
     {
-        $factory   = new AttributeTypeFactory();
+        $factory   = new AttributeTypeFactory($this->mockConnection());
         $attribute = $factory->createInstance(
             array(),
             $this->mockMetaModel('mm_test', 'de', 'en')
         );
 
-        $this->assertInstanceOf('MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext', $attribute);
+        $this->assertInstanceOf(TranslatedLongtext::class, $attribute);
     }
 }

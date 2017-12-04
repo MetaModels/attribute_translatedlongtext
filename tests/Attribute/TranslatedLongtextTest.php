@@ -15,15 +15,17 @@
  * @filesource
  */
 
-namespace MetaModels\Test\Attribute\TranslatedLongtext;
+namespace MetaModels\AttributeTranslatedLongtextBundle\Test\Attribute;
 
-use MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext;
-use MetaModels\Attribute\TranslatedText\TranslatedText;
+use Doctrine\DBAL\Connection;
+use MetaModels\AttributeTranslatedLongtextBundle\Attribute\TranslatedLongtext;
+use MetaModels\IMetaModel;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Unit tests to test class TranslatedText.
  */
-class TranslatedLongtextTest extends \PHPUnit_Framework_TestCase
+class TranslatedLongtextTest extends TestCase
 {
     /**
      * Mock a MetaModel.
@@ -35,11 +37,7 @@ class TranslatedLongtextTest extends \PHPUnit_Framework_TestCase
      */
     protected function mockMetaModel($language, $fallbackLanguage)
     {
-        $metaModel = $this->getMock(
-            'MetaModels\MetaModel',
-            array(),
-            array(array())
-        );
+        $metaModel = $this->getMockForAbstractClass(IMetaModel::class);
 
         $metaModel
             ->expects($this->any())
@@ -60,13 +58,25 @@ class TranslatedLongtextTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Mock the database connection.
+     *
+     * @return \PHPUnit_Framework_MockObject_MockObject|Connection
+     */
+    private function mockConnection()
+    {
+        return $this->getMockBuilder(Connection::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
+
+    /**
      * Test that the attribute can be instantiated.
      *
      * @return void
      */
     public function testInstantiation()
     {
-        $text = new TranslatedLongtext($this->mockMetaModel('en', 'en'));
-        $this->assertInstanceOf('MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext', $text);
+        $text = new TranslatedLongtext($this->mockMetaModel('en', 'en'), [], $this->mockConnection());
+        $this->assertInstanceOf(TranslatedLongtext::class, $text);
     }
 }

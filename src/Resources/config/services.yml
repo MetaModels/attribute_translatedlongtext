@@ -1,0 +1,7 @@
+services:
+  metamodels.attribute_translatedlongtext.factory:
+    class: MetaModels\AttributeTranslatedLongtextBundle\Attribute\AttributeTypeFactory
+    arguments:
+      - "@database_connection"
+    tags:
+      - { name: metamodels.attribute_factory }

@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/attribute_translatedlongtext.
  *
- * (c) 2012-2016 The MetaModels team.
+ * (c) 2012-2017 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -16,30 +16,34 @@
  * @package    MetaModels
  * @subpackage AttributeTranslatedLongtext
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
- * @author     Cliff Parnitzky <github@cliff-parnitzky.de>
+ * @author     Andreas Isaak <info@andreas-isaak.de>
+ * @author     Christopher Boelter <christopher@boelter.eu>
+ * @author     Stefan Heimes <stefan_heimes@hotmail.com>
  * @author     Sven Baumann <baumann.sv@gmail.com>
- * @copyright  2012-2016 The MetaModels team.
+ * @author     David Molineus <david.molineus@netzmacht.de>
+ * @copyright  2012-2017 The MetaModels team.
  * @license    https://github.com/MetaModels/attribute_translatedlongtext/blob/master/LICENSE LGPL-3.0
  * @filesource
  */
 
-namespace MetaModels\Attribute\TranslatedLongtext;
-
-use MetaModels\Attribute\AbstractAttributeTypeFactory;
-
-/**
- * Attribute type factory for translated long text attributes.
- */
-class AttributeTypeFactory extends AbstractAttributeTypeFactory
-{
-    /**
-     * {@inheritDoc}
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->typeName  = 'translatedlongtext';
-        $this->typeIcon  = 'system/modules/metamodelsattribute_translatedlongtext/html/longtext.png';
-        $this->typeClass = 'MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext';
-    }
-}
+$GLOBALS['TL_DCA']['tl_metamodel_dcasetting']['metasubselectpalettes']['attr_id']['translatedlongtext'] = array
+(
+    'presentation' => array(
+        'tl_class',
+        'rte',
+        'rows',
+        'cols',
+    ),
+    'functions'    => array(
+        'mandatory',
+        'allowHtml',
+        'preserveTags',
+        'decodeEntities',
+        'trailingSlash',
+        'spaceToUnderscore',
+    ),
+    'overview'     => array(
+        'filterable',
+        'searchable'
+    )
+);
