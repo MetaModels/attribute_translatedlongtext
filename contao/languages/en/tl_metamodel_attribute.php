@@ -11,8 +11,9 @@
  * @package     MetaModels
  * @subpackage  AttributeTranslatedLongtext
  * @author      Christian Schiffler <c.schiffler@cyberspectrum.de>
+ * @author      Sven Baumann <baumann.sv@gmail.com>
  * @copyright   The MetaModels team.
- * @license     LGPL.
+ * @license     LGPL-3.0-or-later
  * @filesource
  */
 

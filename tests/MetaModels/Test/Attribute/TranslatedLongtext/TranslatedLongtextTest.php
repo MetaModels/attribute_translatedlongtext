@@ -10,8 +10,9 @@
  * @package    MetaModels
  * @subpackage Tests
  * @author     Christopher Boelter <christopher@boelter.eu>
+ * @author     Sven Baumann <baumann.sv@gmail.com>
  * @copyright  The MetaModels team.
- * @license    LGPL.
+ * @license    LGPL-3.0-or-later
  * @filesource
  */
 
