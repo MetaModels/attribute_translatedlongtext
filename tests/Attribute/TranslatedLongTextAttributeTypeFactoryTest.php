@@ -11,8 +11,9 @@
  * @subpackage Tests
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Christopher Boelter <christopher@boelter.eu>
+ * @author     Sven Baumann <baumann.sv@gmail.com>
  * @copyright  The MetaModels team.
- * @license    LGPL-3+
+ * @license    LGPL-3.0-or-later
  * @filesource
  */
 
@@ -82,7 +83,7 @@ class TranslatedLongTextAttributeTypeFactoryTest extends TestCase
      */
     protected function getAttributeFactories()
     {
-        return array(new AttributeTypeFactory($this->mockConnection()));
+        return [new AttributeTypeFactory($this->mockConnection())];
     }
 
     /**
@@ -94,7 +95,7 @@ class TranslatedLongTextAttributeTypeFactoryTest extends TestCase
     {
         $factory   = new AttributeTypeFactory($this->mockConnection());
         $attribute = $factory->createInstance(
-            array(),
+            [],
             $this->mockMetaModel('mm_test', 'de', 'en')
         );
 

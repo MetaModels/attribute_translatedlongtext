@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/attribute_translatedlongtext.
  *
- * (c) 2012-2017 The MetaModels team.
+ * (c) 2012-2018 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,7 +13,8 @@
  * @package    MetaModels
  * @subpackage AttributeTranslatedLongtext
  * @author     David Molineus <david.molineus@netzmacht.de>
- * @copyright  2012-2017 The MetaModels team.
+ * @author     Sven Baumann <baumann.sv@gmail.com>
+ * @copyright  2012-2018 The MetaModels team.
  * @license    https://github.com/MetaModels/attribute_longtext/blob/master/LICENSE LGPL-3.0
  * @filesource
  */
@@ -37,7 +38,7 @@ class DeprecatedAutoloaderTest extends TestCase
      * @var array
      */
     private static $classes = [
-        'MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext'       => TranslatedLongtext::class,
+        'MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext'   => TranslatedLongtext::class,
         'MetaModels\Attribute\TranslatedLongtext\AttributeTypeFactory' => AttributeTypeFactory::class
     ];
 
@@ -67,7 +68,7 @@ class DeprecatedAutoloaderTest extends TestCase
      */
     public function testDeprecatedClassesAreLongtexted($oldClass, $newClass)
     {
-        $this->assertTrue(class_exists($oldClass), sprintf('Class TranslatedLongtext "%s" is not found.', $oldClass));
+        $this->assertTrue(\class_exists($oldClass), \sprintf('Class TranslatedLongtext "%s" is not found.', $oldClass));
 
         $oldClassReflection = new \ReflectionClass($oldClass);
         $newClassReflection = new \ReflectionClass($newClass);

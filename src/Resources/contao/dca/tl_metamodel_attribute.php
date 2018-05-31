@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/attribute_translatedlongtext.
  *
- * (c) 2012-2017 The MetaModels team.
+ * (c) 2012-2018 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,8 +21,8 @@
  * @author     David Maack <maack@men-at-work.de>
  * @author     Sven Baumann <baumann.sv@gmail.com>
  * @author     David Molineus <david.molineus@netzmacht.de>
- * @copyright  2012-2017 The MetaModels team.
- * @license    https://github.com/MetaModels/attribute_translatedlongtext/blob/master/LICENSE LGPL-3.0
+ * @copyright  2012-2018 The MetaModels team.
+ * @license    https://github.com/MetaModels/attribute_translatedlongtext/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
 
@@ -34,40 +34,34 @@
  * Add palette configuration.
  */
 
-$GLOBALS['TL_DCA']['tl_metamodel_attribute']['metapalettes']['translatedlongtext extends _complexattribute_'] = array();
+$GLOBALS['TL_DCA']['tl_metamodel_attribute']['metapalettes']['translatedlongtext extends _complexattribute_'] = [];
 
 /*
  * Add data provider.
  */
 
-$GLOBALS['TL_DCA']['tl_metamodel_attribute']['dca_config']['data_provider']['tl_metamodel_translatedlongtext'] = array
-(
+$GLOBALS['TL_DCA']['tl_metamodel_attribute']['dca_config']['data_provider']['tl_metamodel_translatedlongtext'] = [
     'source' => 'tl_metamodel_translatedlongtext'
-);
+];
 
 /*
  * Add child condition.
  */
 
-$GLOBALS['TL_DCA']['tl_metamodel_attribute']['dca_config']['childCondition'][] = array
-(
+$GLOBALS['TL_DCA']['tl_metamodel_attribute']['dca_config']['childCondition'][] = [
     'from'   => 'tl_metamodel_attribute',
     'to'     => 'tl_metamodel_translatedlongtext',
-    'setOn'  => array
-    (
-        array
-        (
+    'setOn'  => [
+        [
             'to_field'   => 'att_id',
             'from_field' => 'id',
-        ),
-    ),
-    'filter' => array
-    (
-        array
-        (
+        ],
+    ],
+    'filter' => [
+        [
             'local'     => 'att_id',
             'remote'    => 'id',
             'operation' => '=',
-        ),
-    )
-);
+        ],
+    ]
+];
