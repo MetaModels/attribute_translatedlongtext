@@ -19,7 +19,6 @@
 namespace MetaModels\Test\Attribute\TranslatedLongtext;
 
 use MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext;
-use MetaModels\Attribute\TranslatedText\TranslatedText;
 
 /**
  * Unit tests to test class TranslatedText.
