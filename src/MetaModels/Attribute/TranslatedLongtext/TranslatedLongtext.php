@@ -43,7 +43,7 @@ class TranslatedLongtext extends TranslatedReference
      */
     public function getAttributeSettingNames()
     {
-        return array_merge(
+        return \array_merge(
             parent::getAttributeSettingNames(),
             [
                 'allowHtml',
