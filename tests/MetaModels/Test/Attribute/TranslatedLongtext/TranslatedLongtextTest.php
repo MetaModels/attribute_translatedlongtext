@@ -19,6 +19,8 @@
 namespace MetaModels\Test\Attribute\TranslatedLongtext;
 
 use MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext;
+use MetaModels\IMetaModel;
+use MetaModels\MetaModel;
 
 /**
  * Unit tests to test class TranslatedText.
@@ -35,7 +37,7 @@ class TranslatedLongtextTest extends \PHPUnit_Framework_TestCase
      */
     protected function mockMetaModel($language, $fallbackLanguage)
     {
-        $metaModel = $this->getMock('MetaModels\MetaModel', [], [[]]);
+        $metaModel = $this->getMock(MetaModel::class, [], [[]]);
 
         $metaModel
             ->expects($this->any())
@@ -63,6 +65,6 @@ class TranslatedLongtextTest extends \PHPUnit_Framework_TestCase
     public function testInstantiation()
     {
         $text = new TranslatedLongtext($this->mockMetaModel('en', 'en'));
-        $this->assertInstanceOf('MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext', $text);
+        $this->assertInstanceOf(TranslatedLongtext::class, $text);
     }
 }
