@@ -36,11 +36,7 @@ class TranslatedLongtextTest extends \PHPUnit_Framework_TestCase
      */
     protected function mockMetaModel($language, $fallbackLanguage)
     {
-        $metaModel = $this->getMock(
-            'MetaModels\MetaModel',
-            array(),
-            array(array())
-        );
+        $metaModel = $this->getMock('MetaModels\MetaModel', [], [[]]);
 
         $metaModel
             ->expects($this->any())

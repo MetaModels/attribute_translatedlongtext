@@ -26,12 +26,11 @@ use MetaModels\Attribute\TranslatedLongtext\AttributeTypeFactory;
 use MetaModels\Attribute\Events\CreateAttributeFactoryEvent;
 use MetaModels\MetaModelsEvents;
 
-return array
-(
-    MetaModelsEvents::ATTRIBUTE_FACTORY_CREATE => array(
+return [
+    MetaModelsEvents::ATTRIBUTE_FACTORY_CREATE => [
         function (CreateAttributeFactoryEvent $event) {
             $factory = $event->getFactory();
             $factory->addTypeFactory(new AttributeTypeFactory());
         }
-    ),
-);
+    ],
+];

@@ -25,24 +25,23 @@
  * @filesource
  */
 
-$GLOBALS['TL_DCA']['tl_metamodel_dcasetting']['metasubselectpalettes']['attr_id']['translatedlongtext'] = array
-(
-    'presentation' => array(
+$GLOBALS['TL_DCA']['tl_metamodel_dcasetting']['metasubselectpalettes']['attr_id']['translatedlongtext'] = [
+    'presentation' => [
         'tl_class',
         'rte',
         'rows',
         'cols',
-    ),
-    'functions'    => array(
+    ],
+    'functions'    => [
         'mandatory',
         'allowHtml',
         'preserveTags',
         'decodeEntities',
         'trailingSlash',
         'spaceToUnderscore',
-    ),
-    'overview'     => array(
+    ],
+    'overview'     => [
         'filterable',
         'searchable'
-    )
-);
+    ]
+];

@@ -42,11 +42,7 @@ class TranslatedLongTextAttributeTypeFactoryTest extends AttributeTypeFactoryTes
      */
     protected function mockMetaModel($tableName, $language, $fallbackLanguage)
     {
-        $metaModel = $this->getMock(
-            'MetaModels\MetaModel',
-            array(),
-            array(array())
-        );
+        $metaModel = $this->getMock('MetaModels\MetaModel', [], [[]]);
 
         $metaModel
             ->expects($this->any())
@@ -73,7 +69,7 @@ class TranslatedLongTextAttributeTypeFactoryTest extends AttributeTypeFactoryTes
      */
     protected function getAttributeFactories()
     {
-        return array(new AttributeTypeFactory());
+        return [new AttributeTypeFactory()];
     }
 
     /**
@@ -85,7 +81,7 @@ class TranslatedLongTextAttributeTypeFactoryTest extends AttributeTypeFactoryTes
     {
         $factory   = new AttributeTypeFactory();
         $attribute = $factory->createInstance(
-            array(),
+            [],
             $this->mockMetaModel('mm_test', 'de', 'en')
         );
 

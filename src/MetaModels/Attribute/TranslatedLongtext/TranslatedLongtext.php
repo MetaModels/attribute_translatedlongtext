@@ -43,15 +43,18 @@ class TranslatedLongtext extends TranslatedReference
      */
     public function getAttributeSettingNames()
     {
-        return array_merge(parent::getAttributeSettingNames(), array(
-            'allowHtml',
-            'cols',
-            'decodeEntities',
-            'mandatory',
-            'preserveTags',
-            'rte',
-            'rows',
-        ));
+        return array_merge(
+            parent::getAttributeSettingNames(),
+            [
+                'allowHtml',
+                'cols',
+                'decodeEntities',
+                'mandatory',
+                'preserveTags',
+                'rte',
+                'rows',
+            ]
+        );
     }
 
     /**
@@ -65,7 +68,7 @@ class TranslatedLongtext extends TranslatedReference
     /**
      * {@inheritDoc}
      */
-    public function getFieldDefinition($arrOverrides = array())
+    public function getFieldDefinition($arrOverrides = [])
     {
         $arrFieldDef              = parent::getFieldDefinition($arrOverrides);
         $arrFieldDef['inputType'] = 'textarea';
