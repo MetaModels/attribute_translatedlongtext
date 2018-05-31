@@ -3,7 +3,7 @@
 /**
  * This file is part of MetaModels/attribute_translatedlongtext.
  *
- * (c) 2012-2016 The MetaModels team.
+ * (c) 2012-2018 The MetaModels team.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -21,8 +21,8 @@
  * @author     David Maack <maack@men-at-work.de>
  * @author     Cliff Parnitzky <github@cliff-parnitzky.de>
  * @author     Sven Baumann <baumann.sv@gmail.com>
- * @copyright  2012-2016 The MetaModels team.
- * @license    https://github.com/MetaModels/attribute_translatedlongtext/blob/master/LICENSE LGPL-3.0
+ * @copyright  2012-2018 The MetaModels team.
+ * @license    https://github.com/MetaModels/attribute_translatedlongtext/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
 
@@ -43,15 +43,18 @@ class TranslatedLongtext extends TranslatedReference
      */
     public function getAttributeSettingNames()
     {
-        return array_merge(parent::getAttributeSettingNames(), array(
-            'allowHtml',
-            'cols',
-            'decodeEntities',
-            'mandatory',
-            'preserveTags',
-            'rte',
-            'rows',
-        ));
+        return \array_merge(
+            parent::getAttributeSettingNames(),
+            [
+                'allowHtml',
+                'cols',
+                'decodeEntities',
+                'mandatory',
+                'preserveTags',
+                'rte',
+                'rows',
+            ]
+        );
     }
 
     /**
@@ -65,7 +68,7 @@ class TranslatedLongtext extends TranslatedReference
     /**
      * {@inheritDoc}
      */
-    public function getFieldDefinition($arrOverrides = array())
+    public function getFieldDefinition($arrOverrides = [])
     {
         $arrFieldDef              = parent::getFieldDefinition($arrOverrides);
         $arrFieldDef['inputType'] = 'textarea';

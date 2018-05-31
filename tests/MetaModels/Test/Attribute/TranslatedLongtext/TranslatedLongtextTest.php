@@ -10,20 +10,23 @@
  * @package    MetaModels
  * @subpackage Tests
  * @author     Christopher Boelter <christopher@boelter.eu>
+ * @author     Sven Baumann <baumann.sv@gmail.com>
  * @copyright  The MetaModels team.
- * @license    LGPL.
+ * @license    LGPL-3.0-or-later
  * @filesource
  */
 
 namespace MetaModels\Test\Attribute\TranslatedLongtext;
 
 use MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext;
-use MetaModels\Attribute\TranslatedText\TranslatedText;
+use MetaModels\IMetaModel;
+use MetaModels\MetaModel;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Unit tests to test class TranslatedText.
  */
-class TranslatedLongtextTest extends \PHPUnit_Framework_TestCase
+class TranslatedLongtextTest extends TestCase
 {
     /**
      * Mock a MetaModel.
@@ -35,11 +38,7 @@ class TranslatedLongtextTest extends \PHPUnit_Framework_TestCase
      */
     protected function mockMetaModel($language, $fallbackLanguage)
     {
-        $metaModel = $this->getMock(
-            'MetaModels\MetaModel',
-            array(),
-            array(array())
-        );
+        $metaModel = $this->getMockBuilder(MetaModel::class)->setMethods([])->setConstructorArgs([[]])->getMock();
 
         $metaModel
             ->expects($this->any())
@@ -67,6 +66,6 @@ class TranslatedLongtextTest extends \PHPUnit_Framework_TestCase
     public function testInstantiation()
     {
         $text = new TranslatedLongtext($this->mockMetaModel('en', 'en'));
-        $this->assertInstanceOf('MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext', $text);
+        $this->assertInstanceOf(TranslatedLongtext::class, $text);
     }
 }

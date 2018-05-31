@@ -11,8 +11,9 @@
  * @subpackage Tests
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Christopher Boelter <christopher@boelter.eu>
+ * @author     Sven Baumann <baumann.sv@gmail.com>
  * @copyright  The MetaModels team.
- * @license    LGPL-3+
+ * @license    LGPL-3.0-or-later
  * @filesource
  */
 
@@ -22,6 +23,8 @@ use MetaModels\Attribute\IAttributeTypeFactory;
 use MetaModels\Attribute\TranslatedLongtext\AttributeTypeFactory;
 use MetaModels\IMetaModel;
 use MetaModels\Test\Attribute\AttributeTypeFactoryTest;
+use MetaModels\MetaModel;
+use MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext;
 
 /**
  * Test the attribute factory.
@@ -41,11 +44,7 @@ class TranslatedLongTextAttributeTypeFactoryTest extends AttributeTypeFactoryTes
      */
     protected function mockMetaModel($tableName, $language, $fallbackLanguage)
     {
-        $metaModel = $this->getMock(
-            'MetaModels\MetaModel',
-            array(),
-            array(array())
-        );
+        $metaModel = $this->getMockBuilder(MetaModel::class)->setMethods([])->setConstructorArgs([[]])->getMock();
 
         $metaModel
             ->expects($this->any())
@@ -72,7 +71,7 @@ class TranslatedLongTextAttributeTypeFactoryTest extends AttributeTypeFactoryTes
      */
     protected function getAttributeFactories()
     {
-        return array(new AttributeTypeFactory());
+        return [new AttributeTypeFactory()];
     }
 
     /**
@@ -84,10 +83,10 @@ class TranslatedLongTextAttributeTypeFactoryTest extends AttributeTypeFactoryTes
     {
         $factory   = new AttributeTypeFactory();
         $attribute = $factory->createInstance(
-            array(),
+            [],
             $this->mockMetaModel('mm_test', 'de', 'en')
         );
 
-        $this->assertInstanceOf('MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext', $attribute);
+        $this->assertInstanceOf(TranslatedLongtext::class, $attribute);
     }
 }
