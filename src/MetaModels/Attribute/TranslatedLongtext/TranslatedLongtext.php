@@ -28,9 +28,6 @@ use MetaModels\Attribute\TranslatedReference;
 
 /**
  * This is the MetaModelAttribute class for handling translated long text fields.
- *
- * @package    MetaModels
- * @subpackage AttributeTranslatedLongtext
  */
 class TranslatedLongtext extends TranslatedReference
 {
