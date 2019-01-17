@@ -13,7 +13,7 @@
  * @package    MetaModels
  * @subpackage AttributeTranslatedLongtext
  * @author     David Molineus <david.molineus@netzmacht.de>
- * @author     Sven Baumann <baumann.sv@gmail.com>
+ * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @copyright  2012-2018 The MetaModels team.
  * @license    https://github.com/MetaModels/attribute_longtext/blob/master/LICENSE LGPL-3.0
  * @filesource
@@ -63,6 +63,8 @@ class DeprecatedAutoloaderTest extends TestCase
      *
      * @param string $oldClass Old class name.
      * @param string $newClass New class name.
+     *
+     * @return void
      *
      * @dataProvider provideLongtextClassMap
      */
