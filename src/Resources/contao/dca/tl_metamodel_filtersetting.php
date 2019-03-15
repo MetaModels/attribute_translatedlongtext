@@ -12,19 +12,11 @@
  *
  * @package    MetaModels/attribute_translatedlongtext
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
- * @author     Andreas Isaak <info@andreas-isaak.de>
- * @author     Christopher Boelter <christopher@boelter.eu>
- * @author     Sven Baumann <baumann.sv@gmail.com>
+ * @author     David Molineus <david.molineus@netzmacht.de>
  * @copyright  2012-2019 The MetaModels team.
  * @license    https://github.com/MetaModels/attribute_translatedlongtext/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
 
-/**
- * Register the templates
- */
-\Contao\TemplateLoader::addFiles(
-    [
-        'mm_attr_translatedlongtext' => 'system/modules/metamodelsattribute_translatedlongtext/templates',
-    ]
-);
+$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['simplelookup_palettes']['translatedlongtext'] =
+    &$GLOBALS['TL_DCA']['tl_metamodel_filtersetting']['simplelookup_palettes']['_translated_'];

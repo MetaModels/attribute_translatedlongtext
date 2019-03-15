@@ -14,13 +14,15 @@
  * @author     Christian Schiffler <c.schiffler@cyberspectrum.de>
  * @author     Cliff Parnitzky <github@cliff-parnitzky.de>
  * @author     Sven Baumann <baumann.sv@gmail.com>
+ * @author     David Molineus <david.molineus@netzmacht.de>
  * @copyright  2012-2019 The MetaModels team.
  * @license    https://github.com/MetaModels/attribute_translatedlongtext/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
 
-namespace MetaModels\Attribute\TranslatedLongtext;
+namespace MetaModels\AttributeTranslatedLongtextBundle\Attribute;
 
+use Doctrine\DBAL\Connection;
 use MetaModels\Attribute\AbstractAttributeTypeFactory;
 
 /**
@@ -29,13 +31,31 @@ use MetaModels\Attribute\AbstractAttributeTypeFactory;
 class AttributeTypeFactory extends AbstractAttributeTypeFactory
 {
     /**
-     * {@inheritDoc}
+     * Database connection.
+     *
+     * @var Connection
      */
-    public function __construct()
+    private $connection;
+
+    /**
+     * Create a new instance.
+     *
+     * @param Connection $connection Database connection.
+     */
+    public function __construct(Connection $connection)
     {
         parent::__construct();
-        $this->typeName  = 'translatedlongtext';
-        $this->typeIcon  = 'system/modules/metamodelsattribute_translatedlongtext/html/longtext.png';
-        $this->typeClass = 'MetaModels\Attribute\TranslatedLongtext\TranslatedLongtext';
+        $this->typeName   = 'translatedlongtext';
+        $this->typeIcon   = 'bundles/metamodelsattributetranslatedlongtext/longtext.png';
+        $this->typeClass  = TranslatedLongtext::class;
+        $this->connection = $connection;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function createInstance($information, $metaModel)
+    {
+        return new $this->typeClass($metaModel, $information, $this->connection);
     }
 }

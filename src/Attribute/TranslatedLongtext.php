@@ -17,12 +17,13 @@
  * @author     David Maack <maack@men-at-work.de>
  * @author     Cliff Parnitzky <github@cliff-parnitzky.de>
  * @author     Sven Baumann <baumann.sv@gmail.com>
+ * @author     David Molineus <david.molineus@netzmacht.de>
  * @copyright  2012-2019 The MetaModels team.
  * @license    https://github.com/MetaModels/attribute_translatedlongtext/blob/master/LICENSE LGPL-3.0-or-later
  * @filesource
  */
 
-namespace MetaModels\Attribute\TranslatedLongtext;
+namespace MetaModels\AttributeTranslatedLongtextBundle\Attribute;
 
 use MetaModels\Attribute\TranslatedReference;
 
