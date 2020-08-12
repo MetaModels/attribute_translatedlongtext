@@ -7,4 +7,5 @@ For documentation visit:
 -->
 <project name="metamodels/attribute_translatedlongtext" default="build">
   <import file="vendor/phpcq/phpcq/phpcq.main.xml"/>
+  <target name="phpspec" />
 </project>
