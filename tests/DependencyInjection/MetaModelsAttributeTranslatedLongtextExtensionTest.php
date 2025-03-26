@@ -20,8 +20,8 @@
 
 namespace MetaModels\AttributeTranslatedLongtextBundle\Test\DependencyInjection;
 
-use InspiredMinds\ContaoFileUsage\ContaoFileUsageBundle;
 use MetaModels\AttributeTranslatedLongtextBundle\DependencyInjection\MetaModelsAttributeTranslatedLongtextExtension;
+use MetaModels\AttributeTranslatedLongtextBundle\MetaModelsAttributeTranslatedLongtextBundle;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
@@ -46,7 +46,7 @@ class MetaModelsAttributeTranslatedLongtextExtensionTest extends TestCase
     public function testFactoryIsRegistered(): void
     {
         $container = new ContainerBuilder();
-        $container->setParameter('kernel.bundles', [ContaoFileUsageBundle::class]);
+        $container->setParameter('kernel.bundles', [MetaModelsAttributeTranslatedLongtextBundle::class]);
 
         $extension = new MetaModelsAttributeTranslatedLongtextExtension();
         $extension->load([], $container);
