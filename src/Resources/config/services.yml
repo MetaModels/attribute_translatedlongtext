@@ -5,15 +5,3 @@ services:
       - "@database_connection"
     tags:
       - { name: metamodels.attribute_factory }
-
-#  MetaModels\AttributeTranslatedLongtextBundle\FileUsage\FileUsageProvider:
-#    public: true
-#    arguments:
-#      $factory: '@metamodels.factory'
-#      $urlGenerator: '@router'
-#      $requestStack: '@request_stack'
-#      $csrfTokenManager: '@contao.csrf.token_manager'
-#      $csrfTokenName: '%contao.csrf_token_name%'
-#      $uploadPath: '%contao.upload_path%'
-#    tags:
-#      - { name: contao_file_usage.provider }
