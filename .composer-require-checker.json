@@ -8,6 +8,7 @@
     "Contao\\ManagerPlugin\\Routing\\RoutingPluginInterface",
     "Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle",
     "Doctrine\\DBAL\\Connection",
+    "InspiredMinds\\ContaoFileUsage\\ContaoFileUsageBundle",
     "InspiredMinds\\ContaoFileUsage\\Provider\\FileUsageProviderInterface",
     "InspiredMinds\\ContaoFileUsage\\Result\\FileTreeMultipleResult",
     "InspiredMinds\\ContaoFileUsage\\Result\\FileTreeSingleResult",
